@@ -13,6 +13,20 @@ namespace AutomaticTellerMachine
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Using Route
+            //routes.MapRoute(
+            //   name: "Serial number",
+            //   url: "serial/{letterCase}",
+            //   defaults: new { controller = "Home", action = "Serial", letterCase = "upper" }
+            //);
+
+            //Using query String
+            routes.MapRoute(
+               name: "Serial number",
+               url: "serial",
+               defaults: new { controller = "Home", action = "Serial" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
